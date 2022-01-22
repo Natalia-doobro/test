@@ -1,0 +1,38 @@
+.container {
+  padding: 30px 10px;
+}
+.contacts {
+  font-size: 18px;
+}
+
+.menu__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 700px;
+
+  &:not(:last-child) {
+    margin-bottom: 20px;
+  }
+}
+
+.link {
+  display: flex;
+
+  text-decoration: none;
+}
+
+.avatar__image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+}
+
+.login {
+  font-size: 30px;
+  line-height: 1.13;
+  margin-left: 30px;
+  color: #000;
+}
+
+
