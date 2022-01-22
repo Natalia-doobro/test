@@ -12,11 +12,11 @@ const contactButton = document.querySelector('.avatar_button');
 let contactUser = [];
 let user = '';
 
-async function usersContact(evt) {
+function usersContact(evt) {
   evt.preventDefault();
   containerContact.innerHTML = '';
 
-  await fetch('https://api.github.com/users')
+  fetch('https://api.github.com/users')
     .then(response => {
       return response.json();
     })
@@ -32,7 +32,7 @@ async function usersContact(evt) {
     containerContact.addEventListener('click', informationUser);
 }
 
-async function informationUser(evt) {
+function informationUser(evt) {
   evt.preventDefault();
 
   if (evt.target.nodeName !== 'P') {
@@ -42,7 +42,7 @@ async function informationUser(evt) {
   const nameUser = evt.target.textContent;
   user = nameUser;
     
-  await fetch(`https://api.github.com/users/${nameUser}`)
+  fetch(`https://api.github.com/users/${nameUser}`)
     .then(response => {
       return response.json();
     })
@@ -103,7 +103,7 @@ function usersContactFavourite(evt) {
     containerContact.addEventListener('click', informationUserFavourite);
 }
 
-async function informationUserFavourite(evt) {
+function informationUserFavourite(evt) {
   evt.preventDefault();
 
   if (evt.target.nodeName !== 'P') {
@@ -113,7 +113,7 @@ async function informationUserFavourite(evt) {
   const nameUser = evt.target.textContent;
   user = nameUser;
     
-  await fetch(`https://api.github.com/users/${nameUser}`)
+  fetch(`https://api.github.com/users/${nameUser}`)
     .then(response => {
       return response.json();
     })
